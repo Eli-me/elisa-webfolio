@@ -1,0 +1,62 @@
+:root {
+    --primary-color: #121212;
+    --accent-color: #B497FF;
+    --second-accent-color: #FF6d90;
+    --text-color: #EDEDED;
+    --body-font: 'Inter', sans-serif;
+    --heading-font: 'DM Serif Display', serif;
+    --h1-font-size: clamp(40px, 6vw, 60px);
+    --h2-font-size: clamp(32px, 4.8vw, 40px);
+    --h3-font-size: clamp(26px, 3.8vw, 34px);
+    --biggerbody-font-size: clamp(22px, 3.2vw, 32px);
+    --body-font-size: clamp(18px, 2.4vw, 24px);
+    --smallbody-font-size: clamp(16px, 2vw, 18px);
+    --smallerbody-font-size: 16px;
+    --button-font-size:clamp(16px, 1.8vw, 18px);
+    --button-font-weight: bold;
+    --footer-font-size: 14px;
+    --subtitle-font-size: clamp(22px, 3.2vw, 32px);
+    --subtitle-font-weight: 500;
+}
+
+//testo
+body {
+    font-family: var(--body-font);
+    font-size: var(--body-font-size);
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    line-height: 160%;
+
+     h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--text-color);
+    line-height: 115%;
+  }
+
+  h1 { font-size: var(--h1-font-size); }
+  h2 { font-size: var(--h2-font-size); }
+  h3 { font-size: var(--h3-font-size); }
+
+  .menu-nav_link {
+    font-family: var(--body-font);
+    font-size: var(--body-font-size);
+    color: var(--text-color);
+    line-height: 160%;
+  }
+
+  .btn {
+    font-family: var(--body-font);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 40px;
+    padding: 10px 40px;
+    transition: all 0.3s ease;
+  }
+}
+
+
+
+

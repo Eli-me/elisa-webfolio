@@ -1,0 +1,26 @@
+{
+  "name": "elisa-webfolio",
+  "version": "1.0.0",
+  "description": "Personal UX/UI design portfolio by Elisa Franz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss:css"
+  },
+  
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eli-me/elisa-webfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eli-me/elisa-webfolio/issues"
+  },
+  "homepage": "https://github.com/Eli-me/elisa-webfolio#readme",
+  "devDependencies": {
+    "sass": "^1.88.0"
+  }
+}

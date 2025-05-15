@@ -1,0 +1,417 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #121212;
+  --accent-color: #B497FF;
+  --second-accent-color: #FF6d90;
+  --text-color: #EDEDED;
+  --body-font: "Inter", sans-serif;
+  --heading-font: "DM Serif Display", serif;
+  --h1-font-size: clamp(40px, 6vw, 60px);
+  --h2-font-size: clamp(32px, 4.8vw, 40px);
+  --h3-font-size: clamp(26px, 3.8vw, 34px);
+  --biggerbody-font-size: clamp(22px, 3.2vw, 32px);
+  --body-font-size: clamp(18px, 2.4vw, 24px);
+  --smallbody-font-size: clamp(16px, 2vw, 18px);
+  --smallerbody-font-size: 16px;
+  --button-font-size:clamp(16px, 1.8vw, 18px);
+  --button-font-weight: bold;
+  --footer-font-size: 14px;
+  --subtitle-font-size: clamp(22px, 3.2vw, 32px);
+  --subtitle-font-weight: 500;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  color: var(--text-color);
+  background-color: var(--primary-color);
+  line-height: 160%;
+}
+body h1, body h2, body h3 {
+  font-family: var(--heading-font);
+  color: var(--text-color);
+  line-height: 115%;
+}
+body h1 {
+  font-size: var(--h1-font-size);
+}
+body h2 {
+  font-size: var(--h2-font-size);
+}
+body h3 {
+  font-size: var(--h3-font-size);
+}
+body .menu-nav_link {
+  font-family: var(--body-font);
+  font-size: var(--body-font-size);
+  color: var(--text-color);
+  line-height: 160%;
+}
+body .btn {
+  font-family: var(--body-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+  text-decoration: none;
+  border-radius: 40px;
+  padding: 10px 40px;
+  transition: all 0.3s ease;
+}
+
+.section {
+  padding: clamp(40px, 8vw, 100px) clamp(20px, 5vw, 100px);
+  max-width: 100%;
+}
+
+/* Hero section*/
+.hero {
+  position: relative;
+}
+.hero.section {
+  margin-top: 90px;
+}
+
+/* Hero grid layout for desktop */
+.hero__grid {
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  max-width: 100%;
+  width: fit-content;
+  grid-template-columns: flex; /* oppure flex se preferivi */
+  align-items: center;
+  padding-right: 300px;
+  /* lascia spazio alla figura */
+}
+@media (max-width: 954px) {
+  .hero__grid {
+    padding-right: 0px;
+  }
+}
+
+/* Text block */
+.hero_text {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Hero title */
+.hero_title {
+  margin-bottom: 40px;
+  max-width: 400px;
+}
+@media (max-width: 954px) {
+  .hero_title {
+    margin-bottom: -50px;
+  }
+}
+
+/* Tagline */
+.hero_tagline {
+  margin-bottom: 40px;
+}
+
+.highlight {
+  display: inline-block;
+  padding: 0 10px;
+  background-color: var(--second-accent-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  box-shadow: 4px 4px 0 var(--accent-color), -4px -4px 0px #ffd1e3;
+}
+
+/* Hero image */
+.hero_illustration {
+  position: absolute;
+  top: 50%;
+  right: clamp(-160px, -8vw, -40px); /* Esce in modo proporzionato */
+  transform: translateY(-50%);
+  width: clamp(389px, 42vw, 800px); /* scala fluidamente */
+  z-index: 0;
+}
+@media (max-width: 954px) {
+  .hero_illustration {
+    display: none;
+  }
+}
+.hero_illustration img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.hero_illustration--mobile {
+  display: none;
+}
+@media (max-width: 954px) {
+  .hero_illustration--mobile {
+    display: block;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    width: 400px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero_illustration--mobile img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Buttons in a row, 40px apart */
+.hero_cta {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 40px;
+  width: fit-content;
+  height: fit-content;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 100px;
+  font-size: var(--smallbody-font-size);
+  font-weight: weight(bold);
+  transition: all 0.3s ease;
+}
+.btn.btn--outline {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 3px solid var(--text-color);
+}
+
+@media (max-width: 954px) {
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero_text {
+    width: fit-content;
+  }
+}
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero_illustration {
+    position: static;
+    transform: none;
+    margin-top: -40px;
+    margin-bottom: 20px;
+    width: 389px; /* versione mobile */
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero_illustration img {
+    width: 100%;
+    height: auto;
+  }
+  .hero_cta {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hero_tagline {
+    margin: 0 0 24px;
+  }
+  .hero_text {
+    gap: 30px;
+  }
+}
+/*about*/
+.container-about__grid {
+  margin: 0 auto;
+  position: relative;
+  display: grid;
+  width: fit-content;
+  max-width: 100%;
+  grid-template-columns: flex; /* oppure flex se preferivi */
+  align-items: center;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.container-about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: fit-content;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about__text {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about__text h2 {
+  margin-bottom: 40px;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.container-about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  width: fit-content;
+  max-width: 100%;
+  max-width: 1280px;
+  margin: auto;
+}
+
+.about__story, .pixels {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about__story {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: fit-content;
+  padding-right: clamp(0px, 1vw, 115px);
+}
+
+@media (max-width: 954px) {
+  .about {
+    position: relative;
+    overflow: hidden;
+  }
+  .about__text {
+    width: fit-content;
+  }
+}
+/* Mobile styles */
+@media (max-width: 768px) {
+  .about {
+    position: relative;
+    overflow: hidden;
+  }
+  .about_text {
+    gap: 30px;
+  }
+}
+/* Titolo della sezione */
+.pixels_title {
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: var(--primary-color);
+  text-align: center;
+  border: 2px solid #ffd1e3;
+  box-shadow: 2px 2px 0 var(--accent-color), 4px 4px 0px var(--second-accent-color);
+  padding: 20px 14px;
+}
+
+/* Layout per gli elementi dentro il box Pixels of Me */
+.pixels_list {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(2, 1fr); /* Due colonne */
+  gap: 20px;
+  justify-items: center;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pixels_item {
+  width: clamp(132px, 4.5vw, 141px);
+  height: clamp(132px, 4.5vw, 141px);
+  border: 2px solid #ffd1e3;
+  background-color: transparent;
+  text-align: center;
+  padding: 14px 14px;
+  position: relative;
+  box-shadow: 2px 2px 0 var(--accent-color), 4px 4px 0px var(--second-accent-color);
+}
+.pixels_item img {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: auto;
+}
+.pixels_item:hover, .pixels_item:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.pixels_item span.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+.pixels_item:hover span.visually-hidden, .pixels_item:focus span.visually-hidden, .pixels_item:focus-within span.visually-hidden {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 4px auto 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  display: block;
+}
+
+/* Responsività per dispositivi mobili */
+@media (max-width: 768px) {
+  .container-about__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .pixels_item {
+    margin-top: 20px;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */
