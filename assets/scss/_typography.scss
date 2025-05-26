@@ -2,6 +2,7 @@
     --primary-color: #121212;
     --accent-color: #B497FF;
     --second-accent-color: #FF6d90;
+    --third-accent-color: #FFd1e3; 
     --text-color: #EDEDED;
     --body-font: 'Inter', sans-serif;
     --heading-font: 'DM Serif Display', serif;
@@ -54,6 +55,10 @@ body {
     border-radius: 40px;
     padding: 10px 40px;
     transition: all 0.3s ease;
+    &:hover {
+      background-color: var(--second-accent-color);
+      color: var(--text-color);
+    }
   }
 }
 

@@ -1,0 +1,67 @@
+@import './_resets.scss';
+@import './_variables.scss';
+@import './_typography.scss';
+
+.section {
+  padding: clamp(40px, 8vw, 100px) clamp(20px, 5vw, 100px);
+  max-width: 100%;
+}
+
+.contactme {
+    margin: 0 auto;
+    max-width: 100%;
+    margin-top: 90px;
+    margin-bottom: 90px;
+}
+
+.contact-box {
+    border: 1px solid var(--third-accent-color);
+    box-shadow: 2px 2px 0 var(--accent-color), 4px 4px 0 var(--second-accent-color);
+    border-radius: 0;
+    padding: 2rem;
+}
+
+.form-label {
+    color: var(--text-color);
+}
+
+.form-control {
+    border-radius: 0.4rem;
+    background-color:var(--text-color);
+    color: var(--primary-color);
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.custom-alert {
+  position: fixed;
+  top: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color); /* your purple? adjust as needed */
+  color: var(--text-color); /* your text color */
+  padding: 1rem 1.5rem;
+  border-radius: 0;
+  border: var(--accent-color) 2px solid;
+  box-shadow: 0 0 15px #464646;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  z-index: 9999;
+  transition: opacity 0.3s ease-in-out;
+}
+.d-none {
+  display: none;
+}
+.show-alert {
+  display: block;
+  opacity: 1;
+}
+ 

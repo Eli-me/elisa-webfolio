@@ -131,7 +131,13 @@ nav {
     li {
   list-style: none;
   display: inline-block;
+   &.active {
+    a {
+      font-weight: 700;
+      text-shadow: 2px 0 0 var(--accent-color);
     }
+  }
+}
     a {
   font-family: var(--body-font);
   font-size: var(--body-font-size);
@@ -150,8 +156,7 @@ nav {
     outline: 2px solid var(--accent-color);
     outline-offset: 4px;
     font-weight: bold;
-}
-
+  }
 }
 
 .nav {

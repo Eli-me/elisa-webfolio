@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elisa Franz Webfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/550e24db1c.js" crossorigin="anonymous"></script>
     <meta name="description" content="I am Elisa Franz, a UX/UI designer and this is my webfolio. Discover more about me and my projects.">
     <meta name="robots" content="notranslate, noarchive">
@@ -164,6 +168,7 @@
             </div>
 
             <!--desktop ver-->
+            <div class="container">
             <div class="card-grid">
                 <!--card 1-->
                 <article class="card">
@@ -210,13 +215,79 @@
                     </div>
                 </article>
             </div>
+            </div>
 
-            <!--mobile ver-->
-            <nav class="carousel-dots" aria-label="Projects gallery">
-                <button class="dot is-active"><span class="visually-hidden">Slide 1</span></button>
-                <button class="dot"><span class="visually-hidden">Slide 2</span></button>
-                <button class="dot"><span class="visually-hidden">Slide 3</span></button>
-            </nav>
+              <!--mobile Bootstrap carousel-->
+            <div id="portfolioCarousel" class="carousel slide portfolio-carousel" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <article class="card">
+                            <figure class="card__thumb">
+                                <img src="https://via.placeholder.com/295x150/FF69B4/000000?text=Pixel+Me" alt="Mock-up of Pixel Me project" />
+                            </figure>
+                            <div class="card__body">
+                                <h3 class="card__title">Pixel Me</h3>
+                                <p class="card__subtitle">Portfolio</p>
+                                <p class="card__desc">Design moderno e accessibile...</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="carousel-item">
+                        <article class="card">
+                            <figure class="card__thumb">
+                                <img src="https://via.placeholder.com/295x150/FFD700/000000?text=Design+System" alt="Mock-up of Design System project" />
+                            </figure>
+                            <div class="card__body">
+                                <h3 class="card__title">Design System</h3>
+                                <p class="card__subtitle">UI Components</p>
+                                <p class="card__desc">Sistema completo...</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="carousel-item">
+                        <article class="card">
+                            <figure class="card__thumb">
+                                <img src="https://via.placeholder.com/295x150/FFD1E3/000000?text=Mobile+App" alt="Mock-up of Mobile App project" />
+                            </figure>
+                            <div class="card__body">
+                                <h3 class="card__title">Mobile App</h3>
+                                <p class="card__subtitle">UX/UI Design</p>
+                                <p class="card__desc">Focus su usabilità...</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="carousel-item">
+                        <article class="card">
+                            <figure class="card__thumb">
+                                <img src="https://via.placeholder.com/295x150/FF69B4/000000?text=Web+Platform" alt="Mock-up of Web Platform project" />
+                            </figure>
+                            <div class="card__body">
+                                <h3 class="card__title">Web Platform</h3>
+                                <p class="card__subtitle">Dashboard</p>
+                                <p class="card__desc">Interfaccia intuitiva...</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Controlli Bootstrap -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+
+                <!-- Indicatori Bootstrap -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -240,6 +311,21 @@
     </footer>
 
     <!--script-->
-    <script src="assets/js/main.js" defer></script>  
+    <script src="assets/js/main.js" defer></script>
+    <script src="assets/js/tilt-effect.js" defer></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Opzionale: controllo programmatico del carosello
+        const portfolioCarousel = new bootstrap.Carousel(document.getElementById('portfolioCarousel'), {
+            interval: 5000, // cambia slide ogni 5 secondi
+            wrap: true
+        });
+
+        // Event listeners per il carosello
+        document.getElementById('portfolioCarousel').addEventListener('slide.bs.carousel', function (e) {
+            console.log('Scivolando verso slide:', e.to);
+        });
+    </script> 
 </body>
 </html>
