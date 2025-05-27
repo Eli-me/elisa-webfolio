@@ -7,6 +7,21 @@
   max-width: 100%;
 }
 
+.container {    
+  gap: 40px;
+  width: fit-content;
+  max-width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding-inline: clamp(16px, 5vw, 64px);
+  margin: 0 auto;
+  width: 100%;
+}
+
+h1,h2 {
+  margin-bottom: 20px;
+}
+
 .aboutme  {
      position: relative;
     &.section {
@@ -19,14 +34,23 @@
 }
 
 .aboutme-side {
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; /* Assicura che il testo sia sopra l'illustrazione */
+    padding: 40px 0; /* Aggiungi un padding per evitare che il testo tocchi i bordi */
     @media (min-width: 601px) {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     gap: 40px;
-
-        
     }
 }
 
@@ -74,13 +98,13 @@ div.side {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 80px;
+    gap: 150px;
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     position: relative;
     z-index: 1; /* Assicura che il testo sia sopra l'illustrazione */
-    padding: 40px 20px; /* Aggiungi un padding per evitare che il testo tocchi i bordi */
+    padding: 80px 0; /* Aggiungi un padding per evitare che il testo tocchi i bordi */
     @media (max-width: 600px) {
             flex-direction: column;
             gap: 40px;      
@@ -96,6 +120,25 @@ div.side {
             
         }
     }
+}
+
+
+.side.mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .side.mobile {
+    display: flex; 
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  
+  }
+
+  .side:not(.mobile) {
+    display: none;
+  }
 }
 
 
