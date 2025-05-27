@@ -396,7 +396,7 @@ body .btn:hover {
   transform: scale(0.625);
 }
 .pixels_item:hover, .pixels_item:focus-within {
-  transform: translateY(-5px) translateZ(0);
+  transform: translateY(-5px);
 }
 .pixels_item span.hidden-text {
   display: block;
