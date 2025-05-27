@@ -144,20 +144,9 @@
     <!--script-->
     <script src="assets/js/main.js" defer></script>
     <script src="assets/js/tilt-effect.js" defer></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
-    <script>
-        // Opzionale: controllo programmatico del carosello
-        const portfolioCarousel = new bootstrap.Carousel(document.getElementById('portfolioCarousel'), {
-            interval: 5000, // cambia slide ogni 5 secondi
-            wrap: true
-        });
-
-        // Event listeners per il carosello
-        document.getElementById('portfolioCarousel').addEventListener('slide.bs.carousel', function (e) {
-            console.log('Scivolando verso slide:', e.to);
-        });
-    </script> 
+   
     <!-- EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="assets/js/contact.js"></script>
