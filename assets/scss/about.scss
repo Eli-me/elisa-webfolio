@@ -11,19 +11,32 @@
      position: relative;
     &.section {
         margin-top: 90px;
-         min-height: clamp(400px, 60vh, 800px); // <-- regola qui l’altezza visibile
+        min-height: clamp(400px, 60vh, 800px); // <-- regola qui l’altezza visibile
         display: flex;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}
+
+.aboutme-side {
+    @media (min-width: 601px) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+
+        
     }
 }
 
 .about_illustration {
-  position: absolute;
-  top: 50%;
-  left: clamp(-160px, -8vw, -40px);
-  transform: translateY(-50%);
-  width: clamp(389px, 42vw, 800px);
+  position: relative;
+  width: clamp(389px, 42vw, 611px);
   z-index: 0;
+  flex-shrink: 0; // impedisce che si riduca troppo
+  margin-right: 40px;
+  margin-left: clamp(-90px, -4vw, -70px);
 }
 
 .about_illustration img {
@@ -55,6 +68,36 @@
     display: block;
   }
 }
+
+div.side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; /* Assicura che il testo sia sopra l'illustrazione */
+    padding: 40px 20px; /* Aggiungi un padding per evitare che il testo tocchi i bordi */
+    @media (max-width: 600px) {
+            flex-direction: column;
+            gap: 40px;      
+        }
+
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 100px; /* Limita la larghezza massima dell'immagine */
+        object-fit: contain;
+        @media (max-width: 600px) {
+            max-width: 80px;   
+            
+        }
+    }
+}
+
 
 /* Sezione tools */
 .tools {
