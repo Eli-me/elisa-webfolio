@@ -8,6 +8,7 @@
   --primary-color: #121212;
   --accent-color: #B497FF;
   --second-accent-color: #FF6d90;
+  --third-accent-color: #FFd1e3;
   --text-color: #EDEDED;
   --body-font: "Inter", sans-serif;
   --heading-font: "DM Serif Display", serif;
@@ -32,32 +33,26 @@ body {
   background-color: var(--primary-color);
   line-height: 160%;
 }
-
 body h1, body h2, body h3 {
   font-family: var(--heading-font);
   color: var(--text-color);
   line-height: 115%;
 }
-
 body h1 {
   font-size: var(--h1-font-size);
 }
-
 body h2 {
   font-size: var(--h2-font-size);
 }
-
 body h3 {
   font-size: var(--h3-font-size);
 }
-
 body .menu-nav_link {
   font-family: var(--body-font);
   font-size: var(--body-font-size);
   color: var(--text-color);
   line-height: 160%;
 }
-
 body .btn {
   font-family: var(--body-font);
   font-size: var(--button-font-size);
@@ -68,6 +63,10 @@ body .btn {
   border-radius: 40px;
   padding: 10px 40px;
   transition: all 0.3s ease;
+}
+body .btn:hover {
+  background-color: var(--second-accent-color);
+  color: var(--text-color);
 }
 
 #content {
@@ -99,12 +98,12 @@ body .btn {
   max-width: 1280px;
   margin: auto;
 }
-
 @media screen and (min-width: 1200px) {
   .container-nav {
     padding: 0 80px;
   }
 }
+
 .navbar {
   padding: 20px 4%;
 }
@@ -148,29 +147,28 @@ nav ul {
   margin: 0 100px 0 0;
   list-style: none;
 }
-
 nav li {
   list-style: none;
   display: inline-block;
 }
-
+nav li.active a {
+  font-weight: 700;
+  text-shadow: 2px 0 0 var(--accent-color);
+}
 nav a {
   font-family: var(--body-font);
   font-size: var(--body-font-size);
   color: var(--text-color);
   position: relative;
 }
-
 nav a:hover::after {
   width: 100%;
 }
-
 nav a:hover {
   font-weight: 700;
   text-shadow: 2px 0 0 var(--accent-color);
   font-weight: bold;
 }
-
 nav a:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 4px;
@@ -181,7 +179,6 @@ nav a:focus-visible {
   flex-grow: 1;
   flex-wrap: wrap;
 }
-
 .nav.open {
   right: 0;
   transform: translateX(0);
@@ -205,29 +202,24 @@ nav .fa-solid {
   z-index: 110;
   position: relative;
 }
-
 .menu-btn__line {
   width: 28px;
   height: 3px;
   background-color: var(--text-color);
   transition: all 0.3s ease;
 }
-
 .menu-btn.open {
   position: absolute;
   top: 40px;
   right: 180px;
   z-index: 110;
 }
-
 .menu-btn.open .menu-btn__line:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
-
 .menu-btn.open .menu-btn__line:nth-child(2) {
   opacity: 0;
 }
-
 .menu-btn.open .menu-btn__line:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
@@ -254,6 +246,7 @@ nav .fa-solid {
   height: 100vh;
   width: 250px;
   background-color: var(--primary-color);
+  border-left: var(--text-color) 1px solid;
   backdrop-filter: blur(20px);
   transform: translateX(100%);
   display: flex;
@@ -264,17 +257,14 @@ nav .fa-solid {
   gap: 30px;
   padding: 200px 40px;
 }
-
 .nav.open {
   right: 0;
 }
-
 .nav ul {
   flex-direction: column;
   gap: 40px;
   margin: 0;
 }
-
 .nav li {
   display: block;
 }
@@ -344,7 +334,6 @@ nav .fa-solid {
   flex-direction: column;
   align-items: stretch;
 }
-
 .site-footer .footer_container {
   display: flex;
   justify-content: space-between;
@@ -354,7 +343,6 @@ nav .fa-solid {
   margin: 0 auto;
   flex-wrap: wrap;
 }
-
 .site-footer .footer__content {
   display: flex;
   justify-content: space-between;
@@ -364,26 +352,22 @@ nav .fa-solid {
   margin: 0 auto;
   flex-wrap: wrap;
 }
-
 .site-footer .footer__text {
   display: flex;
   flex-direction: column;
   gap: 12px;
   max-width: 400px;
 }
-
 .site-footer .section-title {
   font-size: 24px;
   font-weight: bold;
   max-width: 400px;
 }
-
 .site-footer .contact__blurb {
   font-size: 16px;
   line-height: 1.6;
   max-width: 400px;
 }
-
 .site-footer .social.icons {
   display: flex;
   gap: 16px;
@@ -392,17 +376,14 @@ nav .fa-solid {
   padding: 0;
   margin: 0;
 }
-
 .site-footer .social.icons li a .social-icon {
   width: 48px;
   height: 48px;
   transition: transform 0.3s ease;
 }
-
 .site-footer .social.icons li a .social-icon:hover {
   transform: scale(1.1);
 }
-
 .site-footer .copyright {
   text-align: center;
   font-size: 14px;
@@ -425,6 +406,5 @@ nav .fa-solid {
     margin-top: 60px;
   }
 }
-
 
 /*# sourceMappingURL=style.css.map */
