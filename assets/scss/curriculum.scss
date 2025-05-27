@@ -3,7 +3,7 @@
 @import './_typography.scss';
 
 .section {
-  padding: clamp(40px, 8vw, 100px) clamp(20px, 5vw, 100px);
+  padding: clamp(40px, 8vw, 100px) clamp(20px, 5vw, 100px) !important;
   max-width: 100%;
 }
 
@@ -98,6 +98,7 @@
   .col-md-5,
   .col-md-1 {
     width: 100%;
+    padding: 0px 20px;
   }
 }
 
