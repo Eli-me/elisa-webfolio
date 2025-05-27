@@ -342,54 +342,50 @@
   position: relative;
   box-shadow: 2px 2px 0 var(--accent-color), 4px 4px 0px var(--second-accent-color);
   transition: transform 0.2s ease-out; // smooth tilt effect
-  transform-style: preserve-3d; // 3D tilt effect
+  transform-style: preserve-3d;
+  will-change: transform; // 3D tilt effect
 
   img {
      width: 80px;
     height: 80px;
     display: block;
     margin: auto;
-    transition: all 0.3s ease; // animazione smooth
+    transition: transform 0.3s ease; // animazione smooth
   }
 
   &:hover img,
   &:focus-within img {
-    width: 50px;
-    height: 50px;
+    transform: scale(0.625);
   }
 
    &:hover, &:focus-within {
         transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        
     }
 
  
 
-     span.visually-hidden {
+     span.hidden-text {
     // Nasconde il contenuto normalmente
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
+    display: block;
+    opacity: 0;
+    max-height: 0;
     overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-    border: 0;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    pointer-events: none;
   }
 
-  &:hover span.visually-hidden,
-  &:focus span.visually-hidden,
-  &:focus-within span.visually-hidden {
+  &:hover span.hidden-text,
+  &:focus span.hidden-text,
+  &:focus-within span.hidden-text {
     // Lo mostra solo in hover/focus
-    position: static;
-    width: auto;
-    height: auto;
-    margin: 4px auto 0;
+   opacity: 1;
+    max-height: 100px; // abbastanza per far vedere il testo
     overflow: visible;
-    clip: auto;
-    white-space: normal;
-    display: block; 
+    pointer-events: auto;
   }
 }
 
