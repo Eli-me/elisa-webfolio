@@ -615,12 +615,17 @@ body .btn:hover {
   object-fit: cover;
 }
 
+.carousel-link {
+  text-decoration: none;
+}
+
 .card__body {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 0 24px 24px 24px;
+  gap: 2px;
+  padding: 0 20px 20px 20px;
   margin-top: 20px;
+  color: var(--primary-color);
 }
 .card__body .card__title {
   font-size: 26px;
@@ -628,12 +633,13 @@ body .btn:hover {
   color: var(--primary-color);
 }
 .card__body .card__subtitle {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   font-style: italic;
+  margin-bottom: 4px;
 }
 .card__body .card__desc {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.4;
   font-weight: 400;
 }
