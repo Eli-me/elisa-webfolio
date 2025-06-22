@@ -407,6 +407,11 @@ body .btn:hover {
   transition: transform 0.2s ease-out;
   transform-style: preserve-3d;
   will-change: transform;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 .pixels_item img {
   width: 80px;
@@ -422,20 +427,22 @@ body .btn:hover {
   transform: translateY(-5px);
 }
 .pixels_item span.hidden-text {
-  display: block;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
-  margin-top: 8px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  width: 100%;
+  margin-top: 0;
   font-size: 14px;
   color: var(--text-color);
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  max-height: none;
+  overflow: visible;
 }
 .pixels_item:hover span.hidden-text, .pixels_item:focus span.hidden-text, .pixels_item:focus-within span.hidden-text {
   opacity: 1;
-  max-height: 100px;
-  overflow: visible;
   pointer-events: auto;
 }
 

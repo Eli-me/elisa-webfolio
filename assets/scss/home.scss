@@ -368,6 +368,11 @@
   transition: transform 0.2s ease-out; // smooth tilt effect
   transform-style: preserve-3d;
   will-change: transform; // 3D tilt effect
+  min-height: 160px; // ensures enough space for icon + text
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
   img {
      width: 80px;
@@ -391,15 +396,19 @@
 
      span.hidden-text {
     // Nasconde il contenuto normalmente
-    display: block;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease, max-height 0.3s ease;
-    margin-top: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 14px;
+    width: 100%;
+    margin-top: 0;
     font-size: 14px;
     color: var(--text-color);
     pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    max-height: none;
+    overflow: visible;
   }
 
   &:hover span.hidden-text,
@@ -407,8 +416,6 @@
   &:focus-within span.hidden-text {
     // Lo mostra solo in hover/focus
    opacity: 1;
-    max-height: 100px; // abbastanza per far vedere il testo
-    overflow: visible;
     pointer-events: auto;
   }
 }
